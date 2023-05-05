@@ -30,47 +30,10 @@ public class Persona {
         }
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-    
-    public void setNombre() {
-
-        this.nombre = nombre;
-
-    }
-
-    public void setApellidos() {
-
-        this.apellidos = apellidos;
-
-    }
-
-    public String getFechaNacimiento() {
-        return getFechaNacimiento('-');
-    }
-
     public void setFechaNacimiento(String fechaNacimiento) throws IllegalArgumentException {
         this.fechaNacimiento = generarFecha(fechaNacimiento);
 
     }
-
-    public String getFechaNacimiento(char separador) {
-        String fecha = null;
-        if (separador != '-' && separador != '/') {
-            throw new IllegalArgumentException();
-        } else {
-            if (this.fechaNacimiento != null) {
-            fecha = fechaNacimiento.getDayOfMonth() + Character.toString(separador) + fechaNacimiento.getMonthValue() + Character.toString(separador) + fechaNacimiento.getYear();
-            }
-        }
-        return fecha;
-    }
-
     private LocalDate generarFecha(String fecha) {
         LocalDate resultado;
         int dia, mes, anyo;
@@ -91,5 +54,32 @@ public class Persona {
         }
 
         return resultado;
+    }
+     public String getNombre() {
+        return nombre;
+        
+    }
+
+    public String getApellidos() {
+        return apellidos;
+        
+    }
+
+    public String getFechaNacimiento() {
+        return getFechaNacimiento('-');
+        
+    }
+     public String getFechaNacimiento(char separador) {
+        String fecha = null;
+        
+        if (separador != '-' && separador != '/') {
+            throw new IllegalArgumentException();
+            
+        } else {
+            if (this.fechaNacimiento != null) {
+            fecha = fechaNacimiento.getDayOfMonth() + Character.toString(separador) + fechaNacimiento.getMonthValue() + Character.toString(separador) + fechaNacimiento.getYear();
+            }
+        }
+        return fecha;
     }
 }
