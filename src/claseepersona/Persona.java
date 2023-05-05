@@ -37,6 +37,18 @@ public class Persona {
     public String getApellidos() {
         return apellidos;
     }
+    
+    public void setNombre() {
+
+        this.nombre = nombre;
+
+    }
+
+    public void setApellidos() {
+
+        this.apellidos = apellidos;
+
+    }
 
     public String getFechaNacimiento() {
         return getFechaNacimiento('-');
