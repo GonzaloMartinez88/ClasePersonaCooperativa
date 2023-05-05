@@ -29,6 +29,7 @@ public class Persona {
             this.fechaNacimiento = generarFecha(fecha);
         }
     }
+
     public void setFechaNacimiento(String fechaNacimiento) throws IllegalArgumentException {
         this.fechaNacimiento = generarFecha(fechaNacimiento);
 
